@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
-
+const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const contactSchema = new Schema({
@@ -17,13 +16,8 @@ const contactSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
 });
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-export default Contact;
+module.exports = Contact;
